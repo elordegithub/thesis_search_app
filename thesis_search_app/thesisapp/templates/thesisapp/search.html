@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesis Search</title>
+</head>
+<body>
+    <h1>Thesis Search App</h1>
+
+    <!-- Search form -->
+    <form method="GET">
+        <input type="text" name="q" placeholder="Search..." value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Display search results -->
+    {% if theses %}
+        <h2>Search Results</h2>
+        <ul>
+            {% for thesis in theses %}
+                <li>
+                    <strong>{{ thesis.title }}</strong> by {{ thesis.author }}<br>
+                    <em>{{ thesis.abstract }}</em>
+                </li>
+            {% endfor %}
+        </ul>
+    {% elif query %}
+        <p>No results found for "{{ query }}".</p>
+    {% endif %}
+</body>
+</html>
