@@ -1,0 +1,24 @@
+<!-- templates/thesisapp/thesis_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesis List</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thesis List</h1>
+        <ul>
+            {% for thesis in theses %}
+                <li>{{ thesis.title }} - {{ thesis.author }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'thesis_search' %}" class="search-button">Search</a>
+    </div>
+</body>
+</html>
