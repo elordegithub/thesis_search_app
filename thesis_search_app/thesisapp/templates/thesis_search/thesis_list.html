@@ -18,7 +18,12 @@
                 <li>{{ thesis.title }} - {{ thesis.author }}</li>
             {% endfor %}
         </ul>
-        <a href="{% url 'thesis_search' %}" class="search-button">Search</a>
+        
+        <!-- Search form -->
+        <form method="GET" action="{% url 'search_results' %}">
+            <input type="text" name="q" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
     </div>
 </body>
 </html>

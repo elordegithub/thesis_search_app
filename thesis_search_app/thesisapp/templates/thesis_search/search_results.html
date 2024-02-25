@@ -17,6 +17,7 @@
             <ul>
                 {% for thesis in theses %}
                     <li>{{ thesis.title }} - {{ thesis.author }}</li>
+                    <p>{{ thesis.abstract }}</p>
                 {% endfor %}
             </ul>
         {% else %}
